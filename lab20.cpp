@@ -1,5 +1,6 @@
 #include <iostream>
 #include <iomanip>
+#include <time.h>
 
 using namespace std;
 const int SIZE = 3;
@@ -50,6 +51,7 @@ public:
 };
 
 int main() {
+    srand (time(NULL));
     cout << fixed << setprecision(2);
 
     //creating pointer to first chair object
@@ -75,6 +77,11 @@ int main() {
     collection[2].setPrices(626.26, 515.15, 757.57);
     for (int i = 0; i < SIZE; i++)
         collection[i].print();
+
+    //creating dynamic array of default chair objects
+    Chair *randCollection = new Chair[SIZE];
+    for (int i = 0; i < SIZE; i++)
+        randCollection[i].print();
     
     return 0;
 }
